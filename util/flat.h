@@ -13,13 +13,16 @@
 // ID type C::TI
 
 template<class C, typename T1, typename T2>
-void knn_1 (const T1 * x, // query
-            const T2 * y, // base
-            int64_t nx, int64_t ny, int64_t dim,
+void knn_1 (const T1 * x, // query_data
+            const T2 * y, // centroids_data
+            int64_t nx,  //query_number 
+            int64_t ny,  //centroids_number 
+            int64_t dim,
             int64_t k,
-            typename C::T * value,
-            typename C::TI * labels,
-            Computer<T1, T2, typename C::T> comptuer)
+            typename C::T * value,  //dis
+            typename C::TI * labels,  //ids
+            Computer<T1, T2, typename C::T> comptuer  //dis metric
+            )
 {
     std::cout << "do knn_1 with nx = " << nx << ", ny = " << ny
               << ", k = " << k << std::endl;
